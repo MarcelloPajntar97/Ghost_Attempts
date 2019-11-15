@@ -1,4 +1,4 @@
-@servers(['web' => ['root@206.81.3.118']])
+@servers(['web' => ['root@159.65.168.219']])
 
 @task('deploy', ['on' => 'web'])
     ls -al
