@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Symfony\Component\Process\Process;
+use Illuminate\Console\Scheduling\Schedule;
+use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 
 class Connection extends Controller
@@ -13,7 +15,8 @@ class Connection extends Controller
     	$directory = base_path();
         //$open = new Process('cd ..');
         //$content = ['cd ..', '/vendor/bin/envoy run deploy'];
-    	$process = new Process('cd .. && vendor/bin/envoy run deploy');
+    	//$process = new Process('cd .. && vendor/bin/envoy run deploy');
+        $process = new Process('ls');
     	//dd('cacca');
     	//$process->start();
         //$open->run();
@@ -28,6 +31,9 @@ class Connection extends Controller
         $err = $process->getErrorOutput();
         $warn = $process->getOutput();
         //dd($process->getOutput());
+        
     	return view('good', compact('err', 'warn'));
     }
+
+    
 }

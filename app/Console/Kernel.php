@@ -26,6 +26,9 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        
+        $schedule->call('\App\Http\Controllers\Connection@sshconn')->everyMinute();
+        //$schedule->command('ls -al')->everyMinute();
     }
 
     /**
