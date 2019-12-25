@@ -15,3 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/stocazzo', 'Connection@sshconn');
+Route::get('/stocftp', 'Connection@ftpconn');
