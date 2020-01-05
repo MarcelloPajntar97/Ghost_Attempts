@@ -75,6 +75,7 @@ class Connection extends Controller
         if (ftp_put($conn_id, '/html/'.$remote_file, $file, FTP_ASCII)) {
             echo "successfully uploaded $file\n";
         } 
+        // in caso di errori
         else {
             echo "There was a problem while uploading $file\n";
         }
